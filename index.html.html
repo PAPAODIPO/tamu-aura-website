@@ -1,0 +1,1652 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tamu Aura by Maybelline</title>
+  <link id="favicon" rel="icon" type="image/png" href="https://imgur.com/xPro9RA.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Poppins:wght@300;400;500&amp;display=swap" rel="stylesheet">
+  <style>
+body {
+  box-sizing: border-box;
+}
+
+:root {
+  --purple: #4b1d6b;
+  --gold: #d4af37;
+  --silver: #cfcfcf;
+  --white: #ffffff;
+  --dark: #0f0f14;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(212,175,55,0.08)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200"><defs><pattern id="dots" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse"><circle cx="30" cy="30" r="2" fill="%23d4af37" opacity="0.1"/></pattern></defs><rect width="1200" height="1200" fill="white"/><rect width="1200" height="1200" fill="url(%23dots)"/></svg>');
+  background-attachment: fixed;
+  color: #222;
+  transition: 0.4s;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body.dark { 
+  background: linear-gradient(135deg, rgba(15,15,20,0.98), rgba(212,175,55,0.05)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200"><defs><pattern id="dots" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse"><circle cx="30" cy="30" r="2" fill="%23d4af37" opacity="0.08"/></pattern></defs><rect width="1200" height="1200" fill="%230f0f14"/><rect width="1200" height="1200" fill="url(%23dots)"/></svg>');
+  background-attachment: fixed;
+  color: #f5f5f5; 
+}
+body.dark p { color: #d1d1d1; }
+body.dark h2 { color: #fff; }
+body.dark section { background-color: #1b1b22; }
+
+/* Floral decorations */
+.floral-vine-left, .floral-vine-right {
+  position: fixed;
+  width: 60px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.floral-vine-left {
+  left: 0;
+  top: 0;
+  background: linear-gradient(to right, rgba(212,175,55,0.15), transparent);
+}
+
+.floral-vine-right {
+  right: 0;
+  top: 0;
+  background: linear-gradient(to left, rgba(212,175,55,0.15), transparent);
+}
+
+.flower-element {
+  position: absolute;
+  animation: floatFlower linear infinite;
+  opacity: 0.8;
+  filter: drop-shadow(0 2px 8px rgba(212,175,55,0.3));
+  font-size: 24px;
+}
+
+@keyframes slideInImage {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes floatFlower {
+  0% { transform: translateY(-100vh) rotateZ(0deg); opacity: 0; }
+  5% { opacity: 0.8; }
+  95% { opacity: 0.8; }
+  100% { transform: translateY(100vh) rotateZ(360deg); opacity: 0; }
+}
+
+.page-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+section { 
+  padding: 60px 8%; 
+  position: relative; 
+  overflow: hidden;
+  background-color: #f5f5f5;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+body.dark section {
+  background-color: #1b1b22;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background: rgba(0, 0, 0, 0.65);
+  pointer-events: none;
+  z-index: 0;
+  animation: slideInImage 0.8s ease-out forwards;
+  border-radius: 20px;
+}
+
+section > * {
+  position: relative;
+  z-index: 1;
+}
+h2 { font-family: 'Playfair Display', serif; font-size: 40px; margin-bottom: 20px; text-align: center; }
+
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--gold) 30%, var(--gold) 70%, transparent);
+  margin: 40px auto;
+  max-width: 600px;
+}
+
+.toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--gold);
+  color: black;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 999;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  min-height: 70%;
+  color: white;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: background-image 0.8s ease-in-out;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,.15), rgba(0,0,0,.1));
+  z-index: 1;
+  pointer-events: none;
+}
+
+header .content {
+  max-width: 650px;
+  padding: 0 8%;
+  position: relative;
+  z-index: 2;
+  animation: fadeIn 1s ease-out;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.logo-container img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold);
+}
+
+.logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+header h1 {
+  font-size: 56px;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 10px;
+}
+
+header p {
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-box {
+  background: rgba(212,175,55,0.05);
+  border: 2px solid var(--gold);
+  padding: 30px;
+  border-radius: 15px;
+  margin: 20px auto;
+  max-width: 800px;
+  transition: 0.4s;
+}
+
+body.dark .section-box {
+  background: rgba(212,175,55,0.08);
+}
+
+.section-box h3 {
+  color: var(--purple);
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+body.dark .section-box h3 {
+  color: var(--gold);
+}
+
+.card {
+  background: rgba(255,255,255,0.9);
+  border: 1px solid var(--silver);
+  padding: 30px;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+body.dark .card {
+  background: #1b1b22;
+}
+
+.card h3 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 15px;
+  color: var(--purple);
+}
+
+body.dark .card h3 {
+  color: var(--gold);
+}
+
+.card button {
+  margin-top: 15px;
+  background: var(--purple);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  background: var(--gold);
+  color: #000;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* Carousel */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(0,0,0,0.8);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid var(--gold);
+}
+
+.carousel-slide {
+  display: none;
+  width: 100%;
+  max-height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-slide.active {
+  display: block;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  max-height: 700px;
+  object-fit: contain;
+  display: block;
+  background: #f5f5f5;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(212,175,55,0.8);
+  color: black;
+  border: none;
+  padding: 15px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.carousel-arrow:hover {
+  background: var(--gold);
+}
+
+.carousel-arrow.prev { left: 15px; }
+.carousel-arrow.next { right: 15px; }
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.carousel-dot.active {
+  background: var(--gold);
+  transform: scale(1.2);
+}
+
+.carousel-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.info-box {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(212,175,55,0.1);
+  border-left: 4px solid var(--gold);
+  border-radius: 10px;
+  text-align: center;
+}
+
+body.dark .info-box {
+  background: rgba(212,175,55,0.08);
+}
+
+.info-box-buttons {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.info-box-buttons a {
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+  background: var(--gold);
+  color: #000;
+}
+
+.info-box-buttons a:hover {
+  background: var(--purple);
+  color: #fff;
+}
+
+/* Form */
+.delivery-form-container {
+  background: rgba(212,175,55,0.08);
+  border: 2px solid var(--gold);
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 700px;
+  margin: 30px auto;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.form-row.full {
+  grid-template-columns: 1fr;
+}
+
+form input, form textarea, form select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--silver);
+  font-family: 'Poppins', sans-serif;
+  background: #fff;
+  color: #222;
+}
+
+body.dark form input, body.dark form textarea, body.dark form select {
+  background: #1b1b22;
+  color: #eee;
+  border-color: #333;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--purple);
+}
+
+body.dark form label {
+  color: var(--gold);
+}
+
+form button {
+  background: var(--gold);
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #000;
+  font-weight: 600;
+  width: 100%;
+  font-size: 16px;
+}
+
+form button:hover {
+  background: var(--purple);
+  color: #fff;
+}
+
+/* Virtual Try-On */
+#photoUploadArea {
+  background: #f5f5f5;
+  border: 2px dashed var(--gold);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#photoUploadArea:hover {
+  background: rgba(212,175,55,0.1);
+}
+
+#photoCanvas {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 15px;
+  display: none;
+  border: 2px solid var(--gold);
+}
+
+.makeup-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.makeup-btn {
+  background: linear-gradient(135deg, #d4af37, #8b7500);
+  color: #000;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+.makeup-btn:hover {
+  transform: scale(1.05);
+}
+
+#lookPreview {
+  margin-top: 20px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 10px;
+  border: 2px solid var(--gold);
+  min-height: 60px;
+  display: block !important;
+  visibility: visible !important;
+}
+
+/* Chat Widget */
+#chatWidget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 998;
+  font-family: 'Poppins', sans-serif;
+}
+
+#chatBox {
+  display: none;
+  width: 350px;
+  height: 500px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  flex-direction: column;
+  overflow: hidden;
+  border: 2px solid var(--gold);
+}
+
+#chatMessages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+#chatInput {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 12px;
+  outline: none;
+  flex: 1;
+}
+
+#chatToggle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--purple), var(--gold));
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#chatToggle:hover {
+  transform: scale(1.1);
+}
+
+/* Message */
+.message-display {
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 15px;
+  display: none;
+}
+
+.message-display.success {
+  background: #22c55e;
+  color: #fff;
+}
+
+.message-display.error {
+  background: #ef4444;
+  color: #fff;
+}
+
+footer {
+  background: #0b0b10;
+  color: #aaa;
+  padding: 50px 8%;
+}
+
+footer h3, footer h4 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.social a {
+  color: var(--gold);
+  font-size: 24px;
+  margin-right: 15px;
+  transition: 0.3s;
+}
+
+.social a:hover {
+  color: #fff;
+}
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div class="floral-vine-left" id="floralLeft"></div>
+  <div class="floral-vine-right" id="floralRight"></div>
+  <div class="page-wrapper"><button class="toggle" onclick="toggleTheme()"><i class="fa-solid fa-moon"></i></button>
+   <header>
+    <div class="content">
+     <div class="logo-container"><img src="https://imgur.com/xPro9RA.png" alt="Tamu Aura Logo" loading="lazy"> <span class="logo-text">Tamu Aura</span>
+     </div>
+     <h1>Tamu Aura <span style="color: var(--gold); display: block;">by Maybelline</span></h1>
+     <p><em>Where moments become aesthetic memories</em></p>
+     <p style="color: #cfcfcf;">Luxury Fashion • Elegant Events • Signature Beauty</p>
+    </div>
+   </header>
+   <section style="background-image: url('https://imgur.com/KSecWwz.jpg?s=400'); background-size: cover; background-position: center;">
+    <h2>About Us</h2>
+    <hr>
+    <div class="section-box">
+     <h3>     Our Story</h3>
+     <p><b>Tamu Aura</b> is a luxury lifestyle brand built to transform moments into unforgettable visual and emotional experiences.</p>
+    </div>
+    <div class="section-box">
+     <h3>    Maybelline Events</h3>
+     <p>Specializes in high-end décor and luxury setups for graduations, birthdays, proposals, and celebrations.</p>
+    </div>
+    <div class="section-box">
+     <h3>👗 Maybelline Fashion</h3>
+     <p>Offers women's fashion including dresses, heels, jewelry, and Dubai-imported perfumes.</p>
+    </div>
+    <div class="section-box">
+     <h3>💄 Touch by Maybelline</h3>
+     <p>Professional makeup, wig installations, lashes, and beauty sessions in Nairobi.</p>
+    </div>
+   </section>
+   <section style="background-image: url('https://imgur.com/ZxOXVtT.jpg?s=400'); background-size: cover; background-position: center;">
+    <h2>Our Branches</h2>
+    <hr>
+    <div class="cards">
+     <div class="card">
+      <h3>Maybelline Fashion</h3>
+      <p>Discover elegant dresses, premium heels, jewelry, and authentic Dubai perfumes.</p><button onclick="contactViaWhatsApp('I am interested in Maybelline Fashion')">Shop With Us</button>
+     </div>
+     <div class="card">
+      <h3>Maybelline Events</h3>
+      <p>Luxury event décor for graduations, birthdays, proposals, and celebrations.</p><button onclick="contactViaWhatsApp('I would like to book an event')">Book an Event</button>
+     </div>
+     <div class="card">
+      <h3>Touch by Maybelline</h3>
+      <p>Professional makeup artistry, wig installations, and beauty sessions in Nairobi.</p><button onclick="contactViaWhatsApp('I would like to book a beauty session')">Book a Session</button>
+     </div>
+    </div>
+   </section>
+   <section style="background-image: url('https://imgur.com/K2YDtGX.jpg?s=400'); background-size: cover; background-position: center;">
+    <h2>Gallery</h2>
+    <hr>
+    <div class="carousel-container">
+     <div style="position: relative; overflow: hidden; border-radius: 18px;">
+      <div class="carousel-slide active"><img src="https://imgur.com/feS7PrN.jpg" alt="Gallery 1" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#d4af37'; this.alt='Image unavailable';">
+      </div>
+      <div class="carousel-slide"><img src="https://imgur.com/UFTd2MI.jpg" alt="Gallery 2" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#d4af37'; this.alt='Image unavailable';">
+      </div>
+      <div class="carousel-slide"><img src="https://imgur.com/gVsQTSz.jpg" alt="Gallery 3" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#d4af37'; this.alt='Image unavailable';">
+      </div>
+      <div class="carousel-slide"><img src="https://imgur.com/1VJ843d.jpg" alt="Gallery 4" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#d4af37'; this.alt='Image unavailable';">
+      </div>
+      <div class="carousel-slide"><img src="https://imgur.com/taam4pL.jpg" alt="Gallery 5" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#d4af37'; this.alt='Image unavailable';">
+      </div>
+      <div class="carousel-slide"><img src="https://imgur.com/ZRB37Ta.jpg" alt="Gallery 6" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#d4af37'; this.alt='Image unavailable';">
+      </div>
+      <div class="carousel-slide"><img src="https://imgur.com/Nc8WvXt.jpg" alt="Gallery 7" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#d4af37'; this.alt='Image unavailable';">
+      </div>
+      <div class="carousel-slide"><img src="https://imgur.com/Is7ua5t.jpg" alt="Gallery 8" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#d4af37'; this.alt='Image unavailable';">
+      </div>
+      <div class="carousel-slide"><img src="https://imgur.com/9wyq7My.jpg" alt="Gallery 9" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#d4af37'; this.alt='Image unavailable';">
+      </div>
+      <div class="carousel-slide"><img src="https://imgur.com/HTZZLuH.jpg" alt="Gallery 10" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#d4af37'; this.alt='Image unavailable';">
+      </div><button class="carousel-arrow prev" onclick="prevSlide()">❮</button> <button class="carousel-arrow next" onclick="nextSlide()">❯</button>
+      <div class="carousel-counter"><span id="currentSlide">1</span> / <span id="totalSlides">10</span>
+      </div>
+     </div>
+     <div class="info-box">
+      <p><strong>Want to see more pictures?</strong></p>
+      <p style="margin-top: 10px; opacity: 0.9;">Contact us for our complete catalog and pricing!</p>
+      <div class="info-box-buttons"><a href="https://wa.me/254112208626" target="_blank" rel="noopener noreferrer">   WhatsApp Us</a> <a href="mailto:tamuaurabymaybelline@gmail.com">✉️ Email Us</a>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section style="background-image: url('https://imgur.com/YbnsIWd.jpg?s=400'); background-size: cover; background-position: center;">
+    <h2>Delivery &amp; Order Form</h2>
+    <hr>
+    <div class="delivery-form-container">
+     <form onsubmit="handleDeliverySubmit(event)">
+      <h3 style="color: var(--purple); margin-bottom: 20px;">Your Information</h3>
+      <div class="form-row">
+       <div><label for="fullName">Full Name *</label> <input type="text" id="fullName" required>
+       </div>
+       <div><label for="phone">Phone Number *</label> <input type="tel" id="phone" required>
+       </div>
+      </div>
+      <div class="form-row full"><label for="email">Email Address</label> <input type="email" id="email">
+      </div>
+      <h3 style="color: var(--purple); margin: 25px 0 15px 0;">Delivery Address</h3>
+      <div class="form-row full"><label for="county">County/Region *</label> <select id="county" required> <option value="">Select County</option> <option value="Nairobi">Nairobi</option> <option value="Kiambu">Kiambu</option> <option value="Nakuru">Nakuru</option> <option value="Mombasa">Mombasa</option> <option value="Kisumu">Kisumu</option> </select>
+      </div>
+      <div class="form-row full"><label for="address">Delivery Address *</label> <textarea id="address" rows="3" required placeholder="Street address, apartment, etc."></textarea>
+      </div>
+      <div class="form-row full"><label for="landmark">Landmark Reference Point *</label> <input type="text" id="landmark" required placeholder="e.g., Near City Square Mall, Behind Blue Gate">
+      </div>
+      <h3 style="color: var(--purple); margin: 25px 0 15px 0;">Order Details</h3>
+      <div class="form-row full"><label for="product">Product/Service Description *</label> <select id="product" required onchange="updateProductInfo()"> <option value="">Select Product/Service</option> <option value="maybelline-fashion">Maybelline Fashion (Dresses, Heels, Jewelry, Perfumes)</option> <option value="maybelline-events">Maybelline Events (Décor &amp; Setup Services)</option> <option value="touch-makeup">Touch by Maybelline (Professional Makeup)</option> <option value="touch-lashes">Touch by Maybelline (Lash Extensions)</option> <option value="touch-wigs">Touch by Maybelline (Wig Installation)</option> <option value="other">Other - Please Specify</option> </select>
+      </div>
+      <div class="form-row full" id="productDetailsRow" style="display: none;"><label for="productDetails">Product Details/Specifications</label> <textarea id="productDetails" rows="2" placeholder="e.g., Red dress size M, Gold heels size 7, etc."></textarea>
+      </div>
+      <div class="form-row">
+       <div><label for="quantity">Quantity *</label> <input type="number" id="quantity" min="1" value="1" required>
+       </div>
+       <div><label for="deliveryDate">Preferred Delivery Date *</label> <input type="date" id="deliveryDate" required>
+       </div>
+      </div>
+      <div class="form-row full"><label for="specialRequests">Special Requests / Notes</label> <textarea id="specialRequests" rows="3" placeholder="Any special instructions, urgent delivery needs, color preferences, etc."></textarea>
+      </div><button type="submit">Submit Order</button>
+     </form>
+     <div id="deliveryMessage" class="message-display"></div>
+    </div>
+   </section>
+   <section style="background-image: url('https://imgur.com/J3lfumK.jpg?s=400'); background-size: cover; background-position: center;">
+    <h2>Virtual Try-On Studio</h2>
+    <hr>
+    <p style="text-align: center; margin-bottom: 30px;">Upload your photo and try makeup looks!</p>
+    <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+     <div style="background: rgba(212,175,55,0.08); padding: 25px; border-radius: 15px; border: 2px solid var(--gold);">
+      <h3 style="color: var(--purple); margin-bottom: 20px;">Your Photo</h3>
+      <div id="photoUploadArea" onclick="document.getElementById('photoInput').click()"><input type="file" id="photoInput" accept="image/*" style="display: none;" onchange="handlePhotoUpload(event)">
+       <p style="margin: 0; color: var(--purple); font-weight: 600;">📸 Click to upload your photo</p>
+      </div>
+      <div style="position: relative; overflow: hidden; border-radius: 10px; border: 2px solid var(--gold);">
+       <canvas id="photoCanvas" style="width: 100%; height: auto; display: none; transform-origin: center;"></canvas>
+      </div>
+      <div style="display: flex; gap: 8px; margin-top: 15px; align-items: center; justify-content: center; background: rgba(212,175,55,0.1); padding: 12px; border-radius: 10px;"><button onclick="zoomOut()" style="background: var(--gold); color: #000; border: none; padding: 10px 15px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 18px;">−</button> <span id="zoomLevel" style="color: var(--purple); font-weight: 600; min-width: 60px; text-align: center;">100%</span> <button onclick="zoomIn()" style="background: var(--gold); color: #000; border: none; padding: 10px 15px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 18px;">+</button>
+      </div>
+      <div style="display: flex; gap: 10px; margin-top: 15px;"><button onclick="downloadTryOn()" style="flex: 1; background: var(--purple); color: #fff; border: none; padding: 12px; border-radius: 10px; cursor: pointer; font-weight: 600;">📥 Download</button> <button onclick="resetPhoto()" style="flex: 1; background: #8b5cf6; color: #fff; border: none; padding: 12px; border-radius: 10px; cursor: pointer; font-weight: 600;">🔄 Reset</button> <button onclick="deletePhoto()" style="flex: 1; background: #ef4444; color: #fff; border: none; padding: 12px; border-radius: 10px; cursor: pointer; font-weight: 600;">🗑️ Delete</button>
+      </div>
+     </div>
+     <div style="background: rgba(212,175,55,0.08); padding: 25px; border-radius: 15px; border: 2px solid var(--gold);">
+      <h3 style="color: var(--purple); margin-bottom: 20px;">Choose Look</h3>
+      <div class="makeup-buttons"><button class="makeup-btn" onclick="applyMakeupLook('glam')">✨ Glam</button> <button class="makeup-btn" onclick="applyMakeupLook('natural')">       Natural</button> <button class="makeup-btn" onclick="applyMakeupLook('bold')">💋 Bold</button> <button class="makeup-btn" onclick="applyMakeupLook('bridal')">    Bridal</button> <button class="makeup-btn" onclick="applyMakeupLook('smokey')">   Smokey</button> <button class="makeup-btn" onclick="applyMakeupLook('coral')">🌅 Coral</button> <button class="makeup-btn" onclick="applyMakeupLook('party')">🎉 Party</button> <button class="makeup-btn" onclick="applyMakeupLook('berry')">🫐 Berry</button>
+      </div>
+      <div id="lookPreview">
+       <p style="margin: 0; color: var(--purple); font-weight: 600;" id="lookName"></p>
+       <p style="margin: 8px 0 0 0; color: #666; font-size: 12px;" id="lookDescription"></p>
+      </div>
+      <div style="margin-top: 25px; padding: 20px; background: rgba(255,255,255,0.7); border-radius: 12px; border: 1px solid var(--gold);">
+       <h4 style="color: var(--purple); margin-bottom: 15px; font-size: 14px;">📊 Customize Your Look</h4>
+       <div style="margin-bottom: 18px;"><label style="display: block; color: var(--purple); font-weight: 600; margin-bottom: 8px; font-size: 12px;">Intensity Level</label>
+        <div style="display: flex; gap: 8px; align-items: center;"><button onclick="decreaseIntensity()" style="background: var(--gold); color: #000; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 16px;">−</button> <input type="range" id="intensitySlider" min="0.3" max="1.5" step="0.1" value="1" onchange="updateIntensity()" style="flex: 1; cursor: pointer;"> <button onclick="increaseIntensity()" style="background: var(--gold); color: #000; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 16px;">+</button> <span id="intensityValue" style="color: var(--purple); font-weight: 600; min-width: 50px; text-align: center;">Normal</span>
+        </div>
+       </div>
+       <div style="margin-bottom: 18px;"><label style="display: block; color: var(--purple); font-weight: 600; margin-bottom: 8px; font-size: 12px;">Quality</label>
+        <div style="display: flex; gap: 8px;"><button onclick="setQuality('basic')" id="qualityBasic" style="flex: 1; background: rgba(212,175,55,0.3); color: var(--purple); border: 2px solid var(--gold); padding: 10px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 12px;">Basic</button> <button onclick="setQuality('professional')" id="qualityProf" style="flex: 1; background: rgba(212,175,55,0.3); color: var(--purple); border: 2px solid var(--gold); padding: 10px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 12px;">Professional</button> <button onclick="setQuality('premium')" id="qualityPrem" style="flex: 1; background: rgba(212,175,55,0.3); color: var(--purple); border: 2px solid var(--gold); padding: 10px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 12px;">Premium</button>
+        </div>
+       </div>
+       <div><label style="display: block; color: var(--purple); font-weight: 600; margin-bottom: 8px; font-size: 12px;">Quantity</label>
+        <div style="display: flex; gap: 8px; align-items: center;"><button onclick="decreaseQuantity()" style="background: var(--gold); color: #000; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 16px;">−</button> <input type="number" id="quantityInput" min="1" max="10" value="1" onchange="updateQuantity()" style="flex: 1; padding: 8px; border: 1px solid var(--gold); border-radius: 6px; text-align: center; font-weight: 600;"> <button onclick="increaseQuantity()" style="background: var(--gold); color: #000; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 16px;">+</button>
+        </div>
+       </div>
+       <div style="margin-top: 15px; padding: 12px; background: var(--gold); border-radius: 8px; text-align: center;">
+        <p style="margin: 0; color: #000; font-weight: 600; font-size: 13px;">Selected: <span id="selectedSummary">None</span></p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section style="background-image: url('https://imgur.com/Wd9YV81.jpg?s=400'); background-size: cover; background-position: center;">
+    <h2>Contact Us</h2>
+    <hr>
+    <div class="section-box">
+     <h3>📞 WhatsApp</h3>
+     <p><a href="https://wa.me/254112208626" target="_blank" rel="noopener noreferrer" style="color: var(--purple); text-decoration: none; font-weight: 600;">+254 112 208626</a></p>
+     <p style="font-size: 14px; opacity: 0.8;">Available 24/7</p>
+    </div>
+    <div class="section-box">
+     <h3>   Email</h3>
+     <p><a href="mailto:tamuaurabymaybelline@gmail.com" style="color: var(--purple); text-decoration: none; font-weight: 600;">tamuaurabymaybelline@gmail.com</a></p>
+    </div>
+    <div class="section-box">
+     <h3>📍 Located In</h3>
+     <p><strong>Nairobi, Kenya</strong></p>
+     <p style="font-size: 14px; opacity: 0.8;">Nationwide delivery available</p>
+    </div>
+   </section>
+   <footer>
+    <div style="max-width: 1400px; margin: 0 auto;"><!-- Main Footer Grid -->
+     <div style="display: grid; grid-template-columns: 2fr 1.5fr 1.5fr 1.5fr 1.5fr; gap: 40px; margin-bottom: 40px;"><!-- About Section (Left) -->
+      <div>
+       <h3 style="color: #fff; margin-bottom: 12px; font-size: 18px; font-weight: 600;">Tamu Aura</h3>
+       <p style="color: #aaa; line-height: 1.7; margin-bottom: 20px; font-size: 13px;">Luxury fashion, events &amp; beauty serving Kenya with pride and elegance.</p>
+       <p style="font-size: 11px; color: #666;">© 2026 Tamu Aura by Maybelline. All rights reserved.</p>
+      </div><!-- Quick Links -->
+      <div>
+       <h4 style="color: #fff; margin-bottom: 18px; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Quick Links</h4>
+       <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 12px;"><a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="color: #d4af37; text-decoration: none; font-size: 13px; transition: 0.3s;">Home</a></li>
+        <li style="margin-bottom: 12px;"><a href="#" style="color: #d4af37; text-decoration: none; font-size: 13px; transition: 0.3s;">About</a></li>
+        <li style="margin-bottom: 12px;"><a href="#" style="color: #d4af37; text-decoration: none; font-size: 13px; transition: 0.3s;">Gallery</a></li>
+       </ul>
+      </div><!-- Payment & Delivery -->
+      <div>
+       <h4 style="color: #fff; margin-bottom: 18px; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Payment &amp; Delivery</h4>
+       <div style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="display: flex; align-items: flex-start; gap: 10px;"><span style="color: var(--gold); font-size: 16px; margin-top: 2px; flex-shrink: 0;">➜</span>
+         <p style="color: #fff; font-size: 13px; font-weight: 500; margin: 0;">Nationwide Delivery</p>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px;"><span style="color: var(--gold); font-size: 16px; margin-top: 2px; flex-shrink: 0;">➜</span>
+         <p style="color: #fff; font-size: 13px; font-weight: 500; margin: 0;">Authentic</p>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px;"><span style="color: var(--gold); font-size: 16px; margin-top: 2px; flex-shrink: 0;">➜</span>
+         <p style="color: #fff; font-size: 13px; font-weight: 500; margin: 0;">Flexible Payments</p>
+        </div>
+       </div>
+      </div><!-- Contact Section -->
+      <div>
+       <h4 style="color: #fff; margin-bottom: 18px; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Contact Us</h4>
+       <div style="margin-bottom: 18px;">
+        <p style="color: var(--gold); font-weight: 600; margin-bottom: 4px; font-size: 12px;">WhatsApp</p>
+        <p style="color: #fff; margin-bottom: 2px; font-size: 13px;"><a href="https://wa.me/254112208626" target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: none; font-weight: 500;">+254 112 208626</a></p>
+        <p style="color: #999; font-size: 11px;">24/7 support</p>
+       </div>
+       <div style="margin-bottom: 18px;">
+        <p style="color: var(--gold); font-weight: 600; margin-bottom: 4px; font-size: 12px;">Email</p>
+        <p style="color: #fff; margin-bottom: 2px; font-size: 13px;"><a href="mailto:tamuaurabymaybelline@gmail.com" style="color: #fff; text-decoration: none; font-weight: 500;">tamuaurabymaybelline@gmail.com</a></p>
+        <p style="color: #999; font-size: 11px;">Within 24 hours</p>
+       </div>
+       <div>
+        <p style="color: var(--gold); font-weight: 600; margin-bottom: 4px; font-size: 12px;">Location</p>
+        <p style="color: #fff; margin-bottom: 2px; font-size: 13px;">Nairobi, Kenya</p>
+        <p style="color: #999; font-size: 11px;">Nationwide delivery</p>
+       </div>
+      </div><!-- Follow Us -->
+      <div>
+       <h4 style="color: #fff; margin-bottom: 18px; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Follow Us</h4>
+       <div style="display: flex; gap: 12px; margin-bottom: 20px;"><a href="https://www.instagram.com/maybelline_events" target="_blank" rel="noopener noreferrer" title="Instagram" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(228, 64, 95, 0.15); transition: 0.3s; border: 1.5px solid #E4405F; hover: scale(1.1);"> <i class="fab fa-instagram" style="font-size: 20px; color: #E4405F;"></i> </a> <a href="https://wa.me/254112208626" target="_blank" rel="noopener noreferrer" title="WhatsApp" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(37, 211, 102, 0.15); transition: 0.3s; border: 1.5px solid #25D366;"> <i class="fab fa-whatsapp" style="font-size: 20px; color: #25D366;"></i> </a>
+       </div>
+       <div style="background: rgba(212,175,55,0.08); padding: 10px; border-radius: 8px; border: 1px solid rgba(212,175,55,0.25); text-align: center;">
+        <p style="color: #d4af37; font-weight: 600; margin-bottom: 8px; font-size: 11px;">   Scan QR Code</p>
+        <div id="qrCode" style="display: flex; justify-content: center; align-items: center;"></div>
+       </div>
+      </div>
+     </div><!-- Divider -->
+     <div style="border-top: 1px solid rgba(212,175,55,0.2); padding-top: 20px; text-align: center;">
+      <p style="color: #666; font-size: 12px;">Made with ✨ for Kenya's finest luxury experience</p>
+     </div>
+    </div>
+   </footer>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+   <script>
+    // Generate QR code for WhatsApp group link
+    if (document.getElementById('qrCode')) {
+      new QRCode(document.getElementById('qrCode'), {
+        text: 'https://chat.whatsapp.com/H0aRkQUfRA41uzoZdl4n50?mode=gi_t',
+        width: 100,
+        height: 100,
+        colorDark: '#d4af37',
+        colorLight: '#0b0b10',
+        correctLevel: QRCode.CorrectLevel.H
+      });
+    }
+   </script><!-- Chat Widget -->
+   <div id="chatWidget">
+    <div id="chatBox">
+     <div style="background: linear-gradient(135deg, var(--purple), var(--gold)); color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center;">
+      <h4 style="margin: 0; font-size: 16px;">💬 Live Chat</h4><button onclick="toggleChat()" style="background: none; border: none; color: white; font-size: 20px; cursor: pointer;">  </button>
+     </div>
+     <div id="chatMessages"></div>
+     <div style="padding: 10px; border-top: 1px solid #eee; display: flex; gap: 8px;"><input type="text" id="chatInput" placeholder="Type message..." style="flex: 1;"> <button onclick="sendChatMessage()" style="background: var(--gold); color: #000; border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-weight: 600;">Send</button>
+     </div>
+    </div><button id="chatToggle" onclick="toggleChat()">💬</button>
+   </div>
+  </div>
+  <script>
+let currentSlide = 0;
+let tryOnPhotoData = null;
+let tryOnOriginalData = null;
+let currentHeaderImage = 0;
+let currentIntensity = 1;
+let currentQuality = 'professional';
+let currentQuantity = 1;
+let selectedLook = null;
+
+const headerImages = [
+  'https://imgur.com/SRz0G6j.jpg'
+];
+
+// Initialize header image rotation
+function initializeHeaderImages() {
+  const header = document.querySelector('header');
+  header.style.backgroundImage = `url('${headerImages[0]}')`;
+  
+  setInterval(() => {
+    currentHeaderImage = (currentHeaderImage + 1) % headerImages.length;
+    header.style.backgroundImage = `url('${headerImages[currentHeaderImage]}')`;
+  }, 5000);
+}
+
+// Initialize floral decorations
+function initializeFloralDecorations() {
+  const flowers = ['🌸', '🌺', '🌻', '🌷', '🌹'];
+  const leftVine = document.getElementById('floralLeft');
+  const rightVine = document.getElementById('floralRight');
+  
+  for (let i = 0; i < 25; i++) {
+    const flower = flowers[Math.floor(Math.random() * flowers.length)];
+    
+    const leftEl = document.createElement('div');
+    leftEl.className = 'flower-element';
+    leftEl.textContent = flower;
+    leftEl.style.left = Math.random() * 50 + 'px';
+    leftEl.style.animationDelay = Math.random() * 25 + 's';
+    leftEl.style.animationDuration = (20 + Math.random() * 15) + 's';
+    leftVine.appendChild(leftEl);
+    
+    const rightEl = document.createElement('div');
+    rightEl.className = 'flower-element';
+    rightEl.textContent = flower;
+    rightEl.style.right = Math.random() * 50 + 'px';
+    rightEl.style.animationDelay = Math.random() * 25 + 's';
+    rightEl.style.animationDuration = (20 + Math.random() * 15) + 's';
+    rightVine.appendChild(rightEl);
+  }
+}
+
+// Carousel functions
+function showSlide(n) {
+  const slides = document.querySelectorAll('.carousel-slide');
+  if (n >= 10) currentSlide = 0;
+  if (n < 0) currentSlide = 9;
+  slides.forEach(s => s.classList.remove('active'));
+  slides[currentSlide].classList.add('active');
+  document.getElementById('currentSlide').textContent = currentSlide + 1;
+  updateDots();
+}
+
+function nextSlide() {
+  currentSlide++;
+  showSlide(currentSlide);
+}
+
+function prevSlide() {
+  currentSlide--;
+  showSlide(currentSlide);
+}
+
+function updateDots() {
+  const dotsContainer = document.getElementById('carouselDots');
+  if (!dotsContainer) return;
+  dotsContainer.innerHTML = '';
+  for (let i = 0; i < 10; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'carousel-dot' + (i === currentSlide ? ' active' : '');
+    dot.onclick = () => { currentSlide = i; showSlide(currentSlide); };
+    dotsContainer.appendChild(dot);
+  }
+}
+
+// Theme toggle
+function toggleTheme() {
+  document.body.classList.toggle('dark');
+}
+
+// Photo upload
+function handlePhotoUpload(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const img = new Image();
+    img.onload = function() {
+      const canvas = document.getElementById('photoCanvas');
+      let width = img.width;
+      let height = img.height;
+      const maxWidth = 400;
+      const maxHeight = 400;
+      
+      if (width > maxWidth) {
+        height = (height * maxWidth) / width;
+        width = maxWidth;
+      }
+      if (height > maxHeight) {
+        width = (width * maxHeight) / height;
+        height = maxHeight;
+      }
+      
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, width, height);
+      tryOnPhotoData = canvas;
+      tryOnOriginalData = ctx.getImageData(0, 0, width, height);
+      canvas.style.display = 'block';
+      document.getElementById('lookName').textContent = 'Select a look';
+      document.getElementById('lookDescription').textContent = 'Choose a makeup style above';
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+// Apply makeup look
+function applyMakeupLook(look) {
+  const looks = {
+    glam: { name: '✨ Glam', desc: 'Bold eyes, volumized lashes' },
+    natural: { name: '🌸 Natural', desc: 'Soft, everyday makeup' },
+    bold: { name: '💋 Bold', desc: 'Dramatic eyes' },
+    bridal: { name: '💍 Bridal', desc: 'Romantic glow' },
+    smokey: { name: '🌙 Smokey', desc: 'Dark dramatic eyes' },
+    coral: { name: '🌅 Coral', desc: 'Warm coral tones' },
+    party: { name: '🎉 Party', desc: 'Vibrant & bold' },
+    berry: { name: '🫐 Berry', desc: 'Deep berry tones' }
+  };
+
+  const lookInfo = looks[look];
+  selectedLook = look;
+  document.getElementById('lookName').textContent = lookInfo.name;
+  document.getElementById('lookDescription').textContent = lookInfo.desc;
+
+  if (tryOnPhotoData && tryOnOriginalData) {
+    applyEffect(look);
+  }
+  
+  updateSelectedSummary();
+}
+
+function rgbToHsl(r, g, b) {
+  r /= 255;
+  g /= 255;
+  b /= 255;
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  let h, s, l = (max + min) / 2;
+
+  if (max === min) {
+    h = s = 0;
+  } else {
+    const d = max - min;
+    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+    switch (max) {
+      case r:
+        h = ((g - b) / d + (g < b ? 6 : 0)) / 6;
+        break;
+      case g:
+        h = ((b - r) / d + 2) / 6;
+        break;
+      case b:
+        h = ((r - g) / d + 4) / 6;
+        break;
+    }
+  }
+  return [h * 360, s * 100, l * 100];
+}
+
+function hslToRgb(h, s, l) {
+  h /= 360;
+  s /= 100;
+  l /= 100;
+  let r, g, b;
+
+  if (s === 0) {
+    r = g = b = l;
+  } else {
+    const hue2rgb = (p, q, t) => {
+      if (t < 0) t += 1;
+      if (t > 1) t -= 1;
+      if (t < 1 / 6) return p + (q - p) * 6 * t;
+      if (t < 1 / 2) return q;
+      if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
+      return p;
+    };
+    const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+    const p = 2 * l - q;
+    r = hue2rgb(p, q, h + 1 / 3);
+    g = hue2rgb(p, q, h);
+    b = hue2rgb(p, q, h - 1 / 3);
+  }
+  return [r * 255, g * 255, b * 255];
+}
+
+function applyEffect(look) {
+  const canvas = document.getElementById('photoCanvas');
+  if (!canvas || !tryOnOriginalData) return;
+  
+  const ctx = canvas.getContext('2d');
+  
+  // Create a copy of the original data to work with
+  const imageData = ctx.createImageData(tryOnOriginalData.width, tryOnOriginalData.height);
+  const data = imageData.data;
+  const origData = tryOnOriginalData.data;
+
+  const effects = {
+    glam: (r, g, b) => {
+      const [h, s, l] = rgbToHsl(r, g, b);
+      return hslToRgb(h, Math.min(100, s * 1.3), Math.min(100, l * 1.1));
+    },
+    natural: (r, g, b) => {
+      const [h, s, l] = rgbToHsl(r, g, b);
+      return hslToRgb(h, s * 0.9, Math.min(100, l * 1.06));
+    },
+    bold: (r, g, b) => {
+      const [h, s, l] = rgbToHsl(r, g, b);
+      return hslToRgb(h, Math.min(100, s * 1.35), l > 50 ? Math.min(100, l * 1.12) : Math.max(0, l * 0.88));
+    },
+    bridal: (r, g, b) => {
+      const [h, s, l] = rgbToHsl(r, g, b);
+      return hslToRgb(h, s * 0.95, Math.min(100, l * 1.15));
+    },
+    smokey: (r, g, b) => {
+      const [h, s, l] = rgbToHsl(r, g, b);
+      return hslToRgb(h, Math.min(100, s * 1.2), l > 55 ? l * 0.9 : l);
+    },
+    coral: (r, g, b) => {
+      const [h, s, l] = rgbToHsl(r, g, b);
+      return hslToRgb((h + 12) % 360, Math.min(100, s * 1.28), l * 1.05);
+    },
+    party: (r, g, b) => {
+      const [h, s, l] = rgbToHsl(r, g, b);
+      return hslToRgb(h, Math.min(100, s * 1.45), l > 45 ? l * 1.08 : l);
+    },
+    berry: (r, g, b) => {
+      const [h, s, l] = rgbToHsl(r, g, b);
+      return hslToRgb((h + 25) % 360, Math.min(100, s * 1.25), l > 50 ? l * 0.96 : l);
+    }
+  };
+
+  const effect = effects[look] || effects.glam;
+  for (let i = 0; i < origData.length; i += 4) {
+    const [r, g, b] = effect(origData[i], origData[i + 1], origData[i + 2]);
+    data[i] = Math.round(r * currentIntensity);
+    data[i + 1] = Math.round(g * currentIntensity);
+    data[i + 2] = Math.round(b * currentIntensity);
+    data[i + 3] = origData[i + 3]; // Preserve alpha
+  }
+  
+  // Draw the processed image data back to the canvas
+  ctx.putImageData(imageData, 0, 0);
+}
+
+function downloadTryOn() {
+  const canvas = document.getElementById('photoCanvas');
+  if (!canvas || canvas.style.display === 'none') {
+    const msg = document.getElementById('deliveryMessage');
+    msg.className = 'message-display error';
+    msg.textContent = 'Please upload a photo first!';
+    msg.style.display = 'block';
+    setTimeout(() => msg.style.display = 'none', 3000);
+    return;
+  }
+  const link = document.createElement('a');
+  link.href = canvas.toDataURL('image/png');
+  link.download = 'makeup-preview.png';
+  link.click();
+}
+
+function resetPhoto() {
+  if (!tryOnOriginalData) return;
+  const canvas = document.getElementById('photoCanvas');
+  const ctx = canvas.getContext('2d');
+  ctx.putImageData(tryOnOriginalData, 0, 0);
+  document.getElementById('lookName').textContent = 'Select a look';
+  document.getElementById('lookDescription').textContent = 'Choose a makeup style above';
+}
+
+function deletePhoto() {
+  const canvas = document.getElementById('photoCanvas');
+  canvas.style.display = 'none';
+  document.getElementById('photoInput').value = '';
+  tryOnPhotoData = null;
+  tryOnOriginalData = null;
+  currentIntensity = 1;
+  currentQuality = 'professional';
+  currentQuantity = 1;
+  selectedLook = null;
+  document.getElementById('intensitySlider').value = 1;
+  document.getElementById('quantityInput').value = 1;
+  document.getElementById('intensityValue').textContent = 'Normal';
+  document.getElementById('selectedSummary').textContent = 'None';
+  updateQualityButtons();
+  document.getElementById('lookName').textContent = 'Select a look';
+  document.getElementById('lookDescription').textContent = 'Choose a makeup style above';
+}
+
+function zoomIn() {
+  if (currentZoom < 2.5) {
+    currentZoom += 0.1;
+    updateZoom();
+  }
+}
+
+function zoomOut() {
+  if (currentZoom > 0.5) {
+    currentZoom -= 0.1;
+    updateZoom();
+  }
+}
+
+function zoomIn() {
+  increaseIntensity();
+}
+
+function zoomOut() {
+  decreaseIntensity();
+}
+
+function increaseIntensity() {
+  const slider = document.getElementById('intensitySlider');
+  let newValue = parseFloat(slider.value) + 0.1;
+  if (newValue > 1.5) newValue = 1.5;
+  slider.value = newValue;
+  updateIntensity();
+}
+
+function decreaseIntensity() {
+  const slider = document.getElementById('intensitySlider');
+  let newValue = parseFloat(slider.value) - 0.1;
+  if (newValue < 0.3) newValue = 0.3;
+  slider.value = newValue;
+  updateIntensity();
+}
+
+function updateIntensity() {
+  const value = parseFloat(document.getElementById('intensitySlider').value);
+  currentIntensity = value;
+  
+  if (value < 0.7) {
+    document.getElementById('intensityValue').textContent = 'Subtle';
+  } else if (value <= 1) {
+    document.getElementById('intensityValue').textContent = 'Normal';
+  } else if (value < 1.25) {
+    document.getElementById('intensityValue').textContent = 'Bold';
+  } else {
+    document.getElementById('intensityValue').textContent = 'Dramatic';
+  }
+  
+  if (selectedLook && tryOnPhotoData && tryOnOriginalData) {
+    applyEffect(selectedLook);
+  }
+  updateSelectedSummary();
+}
+
+function increaseQuantity() {
+  const input = document.getElementById('quantityInput');
+  let newValue = parseInt(input.value) + 1;
+  if (newValue > 10) newValue = 10;
+  input.value = newValue;
+  updateQuantity();
+}
+
+function decreaseQuantity() {
+  const input = document.getElementById('quantityInput');
+  let newValue = parseInt(input.value) - 1;
+  if (newValue < 1) newValue = 1;
+  input.value = newValue;
+  updateQuantity();
+}
+
+function updateQuantity() {
+  currentQuantity = parseInt(document.getElementById('quantityInput').value);
+  updateSelectedSummary();
+}
+
+function setQuality(quality) {
+  currentQuality = quality;
+  updateQualityButtons();
+  updateSelectedSummary();
+}
+
+function updateQualityButtons() {
+  document.getElementById('qualityBasic').style.background = currentQuality === 'basic' ? 'var(--gold)' : 'rgba(212,175,55,0.3)';
+  document.getElementById('qualityBasic').style.color = currentQuality === 'basic' ? '#000' : 'var(--purple)';
+  
+  document.getElementById('qualityProf').style.background = currentQuality === 'professional' ? 'var(--gold)' : 'rgba(212,175,55,0.3)';
+  document.getElementById('qualityProf').style.color = currentQuality === 'professional' ? '#000' : 'var(--purple)';
+  
+  document.getElementById('qualityPrem').style.background = currentQuality === 'premium' ? 'var(--gold)' : 'rgba(212,175,55,0.3)';
+  document.getElementById('qualityPrem').style.color = currentQuality === 'premium' ? '#000' : 'var(--purple)';
+}
+
+function updateSelectedSummary() {
+  const lookName = document.getElementById('lookName').textContent;
+  const intensityText = document.getElementById('intensityValue').textContent;
+  const qualityText = currentQuality.charAt(0).toUpperCase() + currentQuality.slice(1);
+  
+  if (selectedLook) {
+    document.getElementById('selectedSummary').textContent = `${currentQuantity}x ${lookName.slice(2)} • ${intensityText} • ${qualityText}`;
+  }
+}
+
+// Show product details field for certain products
+function updateProductInfo() {
+  const product = document.getElementById('product').value;
+  const detailsRow = document.getElementById('productDetailsRow');
+  
+  if (product === 'other' || product === 'maybelline-fashion' || product === 'touch-makeup' || product === 'touch-lashes' || product === 'touch-wigs') {
+    detailsRow.style.display = 'grid';
+  } else {
+    detailsRow.style.display = 'none';
+    document.getElementById('productDetails').value = '';
+  }
+}
+
+// Set minimum delivery date to today
+document.addEventListener('DOMContentLoaded', function() {
+  const today = new Date().toISOString().split('T')[0];
+  const deliveryDateInput = document.getElementById('deliveryDate');
+  if (deliveryDateInput) {
+    deliveryDateInput.setAttribute('min', today);
+  }
+});
+
+// Form submission
+function handleDeliverySubmit(event) {
+  event.preventDefault();
+  const form = event.target;
+  const button = form.querySelector('button');
+  
+  // Validate required fields
+  const fullName = document.getElementById('fullName').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const county = document.getElementById('county').value.trim();
+  const address = document.getElementById('address').value.trim();
+  const landmark = document.getElementById('landmark').value.trim();
+  const product = document.getElementById('product').value.trim();
+  const quantity = document.getElementById('quantity').value.trim();
+  const deliveryDate = document.getElementById('deliveryDate').value.trim();
+
+  if (!fullName || !phone || !county || !address || !landmark || !product || !quantity || !deliveryDate) {
+    showPopupMessage('❌ Please fill in all required fields (marked with *)', 'error');
+    return;
+  }
+
+  button.disabled = true;
+  button.textContent = 'Submitting...';
+
+  // Collect form data
+  const formData = new FormData();
+  formData.append('fullName', fullName);
+  formData.append('phone', phone);
+  formData.append('email', document.getElementById('email').value.trim());
+  formData.append('county', county);
+  formData.append('address', address);
+  formData.append('landmark', landmark);
+  formData.append('product', product);
+  formData.append('productDetails', document.getElementById('productDetails').value.trim());
+  formData.append('quantity', quantity);
+  formData.append('deliveryDate', deliveryDate);
+  formData.append('specialRequests', document.getElementById('specialRequests').value.trim());
+  formData.append('submittedAt', new Date().toLocaleString());
+
+  // Send via Formspree
+  fetch('https://formspree.io/f/xvgagyry', {
+    method: 'POST',
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => {
+    if (response.ok) {
+      showPopupMessage('✅ Order submitted successfully! We\'ll contact you soon at ' + phone, 'success');
+      form.reset();
+      button.disabled = false;
+      button.textContent = 'Submit Order';
+    } else {
+      showPopupMessage('⚠️ Something went wrong. Please try again or contact WhatsApp: +254 112 208626', 'error');
+      button.disabled = false;
+      button.textContent = 'Submit Order';
+    }
+  })
+  .catch(error => {
+    console.error('Form submission error:', error);
+    showPopupMessage('❌ Submission failed. Please contact WhatsApp: +254 112 208626', 'error');
+    button.disabled = false;
+    button.textContent = 'Submit Order';
+  });
+}
+
+// Popup message function
+function showPopupMessage(message, type) {
+  // Create overlay
+  const overlay = document.createElement('div');
+  overlay.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 9999;';
+  
+  // Create popup
+  const popup = document.createElement('div');
+  popup.style.cssText = 'background: white; padding: 40px; border-radius: 20px; text-align: center; max-width: 400px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); animation: popupSlideIn 0.4s ease-out;';
+  
+  const bgColor = type === 'success' ? '#22c55e' : '#ef4444';
+  const icon = type === 'success' ? '✓' : '✕';
+  
+  popup.innerHTML = `
+    <div style="width: 60px; height: 60px; background: ${bgColor}; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 32px; color: white;">${icon}</div>
+    <p style="font-size: 18px; font-weight: 600; color: #222; margin: 0 0 15px 0;">${message}</p>
+    <button onclick="this.closest('div').parentElement.remove()" style="background: var(--gold); color: #000; border: none; padding: 12px 30px; border-radius: 25px; cursor: pointer; font-weight: 600; font-size: 14px;">Close</button>
+  `;
+  
+  overlay.appendChild(popup);
+  document.body.appendChild(overlay);
+  
+  // Add animation
+  const style = document.createElement('style');
+  style.textContent = '@keyframes popupSlideIn { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }';
+  document.head.appendChild(style);
+  
+  // Auto-close after 5 seconds
+  setTimeout(() => {
+    if (overlay.parentElement) overlay.remove();
+  }, 5000);
+}
+
+// Chat functions
+function toggleChat() {
+  const box = document.getElementById('chatBox');
+  box.style.display = box.style.display === 'none' ? 'flex' : 'none';
+}
+
+function sendChatMessage() {
+  const input = document.getElementById('chatInput');
+  const messagesDiv = document.getElementById('chatMessages');
+  const message = input.value.trim();
+  
+  if (message) {
+    const userMsg = document.createElement('div');
+    userMsg.style.cssText = 'background: var(--gold); color: #000; padding: 10px; border-radius: 10px; margin-bottom: 10px; align-self: flex-end; max-width: 80%;';
+    userMsg.textContent = message;
+    messagesDiv.appendChild(userMsg);
+    input.value = '';
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    
+    setTimeout(() => {
+      const botMsg = document.createElement('div');
+      botMsg.style.cssText = 'background: rgba(75,29,107,0.1); padding: 10px; border-radius: 10px; margin-bottom: 10px; align-self: flex-start; max-width: 80%; word-wrap: break-word;';
+      botMsg.textContent = getAIResponse(message.toLowerCase());
+      messagesDiv.appendChild(botMsg);
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }, 600);
+  }
+}
+
+function getAIResponse(msg) {
+  // Fashion & Shopping responses
+  if (msg.includes('fashion') || msg.includes('dress') || msg.includes('heels') || msg.includes('shop') || msg.includes('buy') || msg.includes('clothing')) {
+    const fashionResponses = [
+      '👗 Our Maybelline Fashion collection features elegant dresses, premium heels, stunning jewelry & authentic Dubai perfumes. What are you looking for?',
+      '     We have gorgeous dresses for every occasion! Interested in something specific? Chat with us on +254 112 208626 for details.',
+      '💎 Check out our latest fashion collection - premium quality, luxury designs! Which items interest you most?',
+      '   Dresses • Heels     Jewelry • Perfumes - we have it all! WhatsApp us at +254 112 208626 for photos & pricing.'
+    ];
+    return fashionResponses[Math.floor(Math.random() * fashionResponses.length)];
+  }
+
+  // Events & Celebrations responses
+  if (msg.includes('event') || msg.includes('party') || msg.includes('wedding') || msg.includes('graduation') || msg.includes('birthday') || msg.includes('proposal') || msg.includes('décor') || msg.includes('decoration')) {
+    const eventResponses = [
+      '🎉 Maybelline Events creates luxurious setups for graduations, birthdays, proposals & more! Tell us about your event!',
+      '💐 We specialize in high-end event décor that transforms your celebration into an unforgettable experience. What\'s the occasion?',
+      '✨ Planning something special? Our luxury event team can bring your vision to life. Contact +254 112 208626 for consultation!',
+      '🎊 From intimate gatherings to grand celebrations, we handle it all! Let\'s discuss your event ideas.'
+    ];
+    return eventResponses[Math.floor(Math.random() * eventResponses.length)];
+  }
+
+  // Beauty & Makeup responses
+  if (msg.includes('beauty') || msg.includes('makeup') || msg.includes('lash') || msg.includes('wig') || msg.includes('session') || msg.includes('artist') || msg.includes('makeover')) {
+    const beautyResponses = [
+      '💄 Touch by Maybelline offers professional makeup artistry, wig installations, lash extensions & beauty sessions in Nairobi. Book yours!',
+      '✨ Our makeup artists create stunning looks for any occasion! From natural to glam - we do it all. Chat +254 112 208626 to book.',
+      '💁‍♀️ Professional beauty services including makeup, lashes, wigs & more! Available in Nairobi with nationwide consultations.',
+      '    Looking to enhance your beauty? Our expert team is ready! Lashes • Makeup • Wigs • Full makeovers available.'
+    ];
+    return beautyResponses[Math.floor(Math.random() * beautyResponses.length)];
+  }
+
+  // Pricing responses
+  if (msg.includes('price') || msg.includes('cost') || msg.includes('how much') || msg.includes('afford') || msg.includes('expensive') || msg.includes('payment')) {
+    const priceResponses = [
+      '💳 Pricing varies by service & product! For custom quotes, contact us on +254 112 208626. We offer flexible payment options.',
+      '💰 We work within different budgets! Message us with details of what you need, and we\'ll give you a personalized quote.',
+      '✨ Our prices are competitive & fair! Reach out to discuss your budget - we have options for everyone.',
+      '   Prices depend on the service/product. Contact +254 112 208626 for transparent pricing & special offers!'
+    ];
+    return priceResponses[Math.floor(Math.random() * priceResponses.length)];
+  }
+
+  // Delivery & Shipping responses
+  if (msg.includes('delivery') || msg.includes('shipping') || msg.includes('ship') || msg.includes('receive') || msg.includes('send') || msg.includes('nationwide')) {
+    const deliveryResponses = [
+      '🚚 We deliver nationwide! Fast & secure shipping. Fill out the Order Form or message +254 112 208626 for details.',
+      '📦 Nationwide delivery available! Orders are carefully packaged & delivered to your doorstep. How can we help?',
+      '  ️ We ship throughout Kenya! For delivery inquiries or rush orders, contact us on WhatsApp +254 112 208626.',
+      '🎁 Fast delivery nationwide! Track your order & get updates. Message us for shipping costs & timelines.'
+    ];
+    return deliveryResponses[Math.floor(Math.random() * deliveryResponses.length)];
+  }
+
+  // Location & Nairobi responses
+  if (msg.includes('nairobi') || msg.includes('location') || msg.includes('where') || msg.includes('visit') || msg.includes('office')) {
+    const locationResponses = [
+      '📍 We\'re based in Nairobi, Kenya! Nationwide delivery available. Interested in visiting? WhatsApp +254 112 208626.',
+      '🏪 Located in Nairobi with nationwide service! You can reach us online or visit in person by appointment.',
+      '📌 Serving all of Kenya from our Nairobi base! Whether you\'re local or upcountry, we\'ve got you covered.',
+      '🌍 Nairobi HQ with delivery to every corner of Kenya! How can we serve you today?'
+    ];
+    return locationResponses[Math.floor(Math.random() * locationResponses.length)];
+  }
+
+  // Contact & Hours responses
+  if (msg.includes('contact') || msg.includes('whatsapp') || msg.includes('phone') || msg.includes('email') || msg.includes('call') || msg.includes('reach')) {
+    const contactResponses = [
+      '📞 WhatsApp: +254 112 208626\n📧 Email: tamuaurabymaybelline@gmail.com\n💬 We\'re available 24/7!',
+      '💬 Best way to reach us? WhatsApp +254 112 208626 - we respond quickly!\n📧 Or email: tamuaurabymaybelline@gmail.com',
+      '     Contact us anytime:\n🟢 WhatsApp: +254 112 208626\n📧 Email: tamuaurabymaybelline@gmail.com\nWe\'re always here!',
+      '🔔 Quick response on WhatsApp +254 112 208626! Available 24/7 for all your questions & orders.'
+    ];
+    return contactResponses[Math.floor(Math.random() * contactResponses.length)];
+  }
+
+  // About responses
+  if (msg.includes('about') || msg.includes('who are') || msg.includes('tell me') || msg.includes('story') || msg.includes('company')) {
+    const aboutResponses = [
+      '✨ Tamu Aura by Maybelline is a luxury lifestyle brand transforming moments into unforgettable experiences through fashion, events & beauty.',
+      '          We\'re Tamu Aura - luxury fashion, premium events & professional beauty services all in one! Serving Kenya with pride.',
+      '💎 Maybelline is your one-stop luxury destination - stunning fashion, elegant events & beauty artistry. All premium quality!',
+      '🌟 We specialize in creating aesthetic memories through luxury experiences! Fashion • Events • Beauty - excellence in all!'
+    ];
+    return aboutResponses[Math.floor(Math.random() * aboutResponses.length)];
+  }
+
+  // Virtual Try-On responses
+  if (msg.includes('try on') || msg.includes('makeup try') || msg.includes('virtual') || msg.includes('photo') || msg.includes('preview')) {
+    const tryOnResponses = [
+      '💄 Our Virtual Try-On Studio lets you test makeup looks on your photo! Upload & select from 8 stunning looks.',
+      '✨ Try before you buy! Upload your photo & experiment with different makeup styles. Download your favorites!',
+      '    Check out our Virtual Try-On feature - see how different looks suit you before booking a session!',
+      '🌟 Test drive any makeup look! Our virtual studio helps you find your perfect style. Fun & easy!'
+    ];
+    return tryOnResponses[Math.floor(Math.random() * tryOnResponses.length)];
+  }
+
+  // Positive responses
+  if (msg.includes('thanks') || msg.includes('thank you') || msg.includes('great') || msg.includes('love') || msg.includes('awesome') || msg.includes('perfect')) {
+    const positiveResponses = [
+      '😊 You\'re welcome! We\'re thrilled to help. Anything else?',
+      '💕 Thank you so much! Looking forward to serving you. WhatsApp us anytime!',
+      '✨ So glad you\'re happy! Let us know if you need anything else.',
+      '🌟 Thank you for the love! We\'re here whenever you need us. 💫'
+    ];
+    return positiveResponses[Math.floor(Math.random() * positiveResponses.length)];
+  }
+
+  // Booking & Appointment responses
+  if (msg.includes('book') || msg.includes('appointment') || msg.includes('reserve') || msg.includes('schedule') || msg.includes('session')) {
+    const bookingResponses = [
+      '📅 Ready to book? Message us on WhatsApp +254 112 208626 with your preferred date & what you need!',
+      '✨ Bookings are easy! Chat with us on +254 112 208626 to reserve your spot. We\'ll confirm right away.',
+      '📝 To book, simply reach out on WhatsApp +254 112 208626. Tell us what you need & when!',
+      '🎯 Let\'s get you booked! Send us details on WhatsApp +254 112 208626 & we\'ll take care of everything.'
+    ];
+    return bookingResponses[Math.floor(Math.random() * bookingResponses.length)];
+  }
+
+  // Default helpful response
+  const defaultResponses = [
+    '😊 Great question! For more details, chat with us on +254 112 208626 - we\'re here 24/7!',
+    '💬 I\'m here to help! What else can I assist you with? Or contact +254 112 208626.',
+    '✨ That\'s a great interest! Message us on WhatsApp for personalized assistance.',
+    '🌟 Tell me more! What specifically interests you about Tamu Aura?',
+    '💫 I\'m always happy to help! Message +254 112 208626 for detailed info or quick responses.'
+  ];
+  return defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
+}
+
+function contactViaWhatsApp(msg) {
+  window.open(`https://wa.me/254112208626?text=${encodeURIComponent(msg)}`, '_blank');
+}
+
+// Initialize
+initializeHeaderImages();
+initializeFloralDecorations();
+showSlide(0);
+updateDots();
+document.getElementById('chatMessages').innerHTML = '<div style="background: rgba(75,29,107,0.1); padding: 10px; border-radius: 10px; margin-bottom: 10px;">👋 Hi! How can we help?</div>';
+
+// Auto-advance carousel every 6 seconds
+setInterval(() => { nextSlide(); }, 6000);
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c885c49f5d4a015',t:'MTc3MDE4OTE1NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
